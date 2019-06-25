@@ -30,10 +30,6 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 
 if (isset($_POST['submit'])) {
     $gambar = $_POST['url'];
-    echo '<script type="text/javascript">',
-     'processImage();',
-     '</script>'
-;
 }
 
 ?>
@@ -160,7 +156,7 @@ Image to analyze:
                             <td>
                                 <form action="index.php" method="post">
                                     <input type="hidden" name="url" value="<?php echo $blob->getUrl()?>">
-                                    <input type="submit" name="submit" value="Analyze!" class="btn btn-primary">
+                                    <input type="submit" name="submit" value="Kirim Link ke box analyze" class="btn btn-primary">
                                 </form>
                             </td>
                         </tr>
