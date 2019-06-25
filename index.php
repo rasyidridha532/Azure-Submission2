@@ -30,6 +30,10 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 
 if (isset($_POST['submit'])) {
     $gambar = $_POST['url'];
+    echo '<script type="text/javascript">',
+     'processImage();',
+     '</script>'
+;
 }
 
 ?>
