@@ -8,13 +8,15 @@ use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
+$gambar="https://www.thesun.co.uk/wp-content/uploads/2017/08/kurt-cobain.jpg";
+
 $connectionString = "DefaultEndpointsProtocol=https;AccountName=uploadgambar;AccountKey=BJgscBqeI4NYw+mrM/cKugWHZXE6qqQ/MUaRZcBVe+K3XmcLv3Lw8y1qtSAi8aaefSChCqawdH3qePTsSPCEhw==";
 $containerName = "blobrasyidsubmission2";
 
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submitblob'])) {
     $fileToUpload = strtolower($_FILES["fileToUpload"]["name"]);
     $content = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
     // echo fread($content, filesize($fileToUpload));
@@ -24,6 +26,11 @@ if (isset($_POST['submit'])) {
 $listBlobsOptions = new ListBlobsOptions();
 $listBlobsOptions->setPrefix("");
 $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
+
+
+if (isset($_POST['submit'])) {
+    $gambar = $_POST['url'];
+}
 
 ?>
 
@@ -104,7 +111,7 @@ Enter the URL to an image, then click the <strong>Analyze image</strong> button.
 <br><br>
 Image to analyze:
 <input type="text" name="inputImage" id="inputImage"
-    value="https://www.thesun.co.uk/wp-content/uploads/2017/08/kurt-cobain.jpg" />
+    value="<?php echo $gambar; ?>" />
 <button onclick="processImage()">Analyze image</button>
 <br><br>
 <div id="wrapper" style="width:1020px; display:table;">
@@ -124,7 +131,7 @@ Image to analyze:
 <br>
 <form class="d-flex justify-content-lefr" action="index.php" method="post" enctype="multipart/form-data">
                 <input type="file" name="fileToUpload" accept=".jpeg,.jpg,.png" required=""><br><br>
-                <input type="submit" name="submit" value="Upload">
+                <input type="submit" name="submitblob" value="Upload">
 </form>
 <br>
         <br>
