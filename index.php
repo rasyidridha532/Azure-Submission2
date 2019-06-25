@@ -8,7 +8,7 @@ use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
-$connectionString = "DefaultEndpointsProtocol=https;AccountName="uploadgambar";AccountKey="BJgscBqeI4NYw+mrM/cKugWHZXE6qqQ/MUaRZcBVe+K3XmcLv3Lw8y1qtSAi8aaefSChCqawdH3qePTsSPCEhw==;
+$connectionString = "DefaultEndpointsProtocol=https;AccountName=uploadgambar;AccountKey=BJgscBqeI4NYw+mrM/cKugWHZXE6qqQ/MUaRZcBVe+K3XmcLv3Lw8y1qtSAi8aaefSChCqawdH3qePTsSPCEhw==";
 $containerName = "blobrasyidsubmission2";
 
 // Create blob client.
