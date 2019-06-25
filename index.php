@@ -123,7 +123,7 @@ Image to analyze:
 <br>
 <br>
 <form class="d-flex justify-content-lefr" action="index.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="fileToUpload" accept=".jpeg,.jpg,.png" required="">
+                <input type="file" name="fileToUpload" accept=".jpeg,.jpg,.png" required=""><br><br>
                 <input type="submit" name="submit" value="Upload">
 </form>
 <br>
