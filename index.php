@@ -120,7 +120,8 @@ Image to analyze:
         <img id="sourceImage" width="400" />
     </div>
 </div>
-<a href="storage-blobs-php-quickstart-master/phpQS.php">Blob Storage</a>
+<br>
+<br>
 <form class="d-flex justify-content-lefr" action="index.php" method="post" enctype="multipart/form-data">
                 <input type="file" name="fileToUpload" accept=".jpeg,.jpg,.png" required="">
                 <input type="submit" name="submit" value="Upload">
@@ -128,7 +129,7 @@ Image to analyze:
 <br>
         <br>
         <h4>Total Files : <?php echo sizeof($result->getBlobs())?></h4>
-        <table class='table table-hover'>
+        <table class='table table-hover' border="1">
             <thead>
                 <tr>
                     <th>File Name</th>
